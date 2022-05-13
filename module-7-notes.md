@@ -46,7 +46,7 @@ console.log(mixedArray); // ["chimpanzee", 5, undefined, arrayVar, 7, true];
 ```
 
 Fact: Can directly add an item to the end of an array using the length property
-- one way to do this is with the `length` property, becuase the `length` property has the same number as the index of the next imagined item
+- one way to do this is with the `length` property, becuase the `length` property has the same number as the index of the next imagined item (risky; "push" preferred)
 ```
 let item;
 
@@ -70,3 +70,76 @@ console.log(collection[8]) // result "ninethItem"
 ```
 
 ### [7.3] Arrays Methods
+- Thorough documentation: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#instance_methods
+- All array methods are heavily documented with examples in MDN Web Docs
+
+SAMPLE: common task, print the contents of an array
+```
+let backpackContents = ["piggy", "headlamp", "pen"];
+
+console.log(backpackContents);
+```
+
+SAMPLE: common task, output contents in the array separated by something;
+```
+let backpackContents = ["piggy", "headlamp", "pen"];
+
+//use the join method on the array object
+console.log(backpackContents.join(", "));
+console.log(backpackContents.join(" | "));
+```
+
+SAMPLE: common task, add one or more items to the end of an array. Preffered: push method
+```
+let backpackContents = ["piggy", "headlamp", "pen"];
+
+// use the push method on add objects directly to the end of the array
+// push method takes a comma-separated list
+
+console.log(backpackContents.push("alpha, beta, gamma"));
+
+// result: ["piggy", "headlamp", "pen", "alpha", "beta", "gamma"];
+```
+
+SAMPLE: common task, add one or more items to the front of an array. Preffered: unshift method
+```
+let backpackContents = ["piggy", "headlamp", "pen"];
+
+// use the unshift method on add objects directly to the front of the array
+// unshift method takes a comma-separated list
+
+console.log(backpackContents.unshift("uno, dos, tres"));
+
+// result: ["uno", "dos", "tres", "piggy", "headlamp", "pen"];
+```
+
+SAMPLE: advanced, can apply functions to each item in an array
+TASK: output each item of the array as a list item in the console
+
+```
+let backpackContents = ["piggy", "headlamp", "pen"];
+
+console.log(backpackContents);
+
+backpackContents.forEach((item) => { 
+    item = `<li>${item}</li>`;
+    console.log(item);
+    })
+
+```
+
+TASK: return the first item you find that is more that 5 characters 
+
+```
+let backpackContent = ["piggy", "headlamp", "pen"];
+
+cosnt longItems = backpackContents.find((item) => {
+    if(item.length>5){
+        return item;
+    }
+})
+
+console.log("Long Items: ", longItems);
+```
+
+

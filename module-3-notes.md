@@ -217,3 +217,4 @@ Here, I have create several methods within the object. One to manipulate each pr
 
 * Conclusion: use a class unless you are required to use an object constructor function (like an old code base).
 
+### NOTE: go through the chapter 3 quiz several times; it is very good!
